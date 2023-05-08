@@ -1,0 +1,37 @@
+package patterns
+
+import utils.Location
+import patterns.core_movement_patterns.Surveillance.Strict_Ordered_Patrolling
+import patterns.core_movement_patterns.Coverage.Visit
+import patterns.core_movement_patterns.Coverage.Sequenced_Visit
+import patterns.core_movement_patterns.Coverage.Strict_Ordered_Visit
+import patterns.core_movement_patterns.Coverage.Ordered_Visit
+
+net RobotColl physical "localhost:9999" {
+
+         
+     node Robot{
+		val robotId = "robot1"
+		
+		val l1 = new Location("l1",-9.0,9.1)
+		val l2 = new Location("l2",9.0,-9.1)
+		val l3 = new Location("l3",-9.0,-9.1)
+		val l4 = new Location("l4",9.0,9.1)
+		val locations = #[l1,l2,l3,l4]	
+			
+		eval(new Strict_Ordered_Visit(robotId,locations))@self
+        
+     
+     }	  
+     	
+ }     
+         
+         
+
+     	
+     	
+     	
+       
+
+	
+

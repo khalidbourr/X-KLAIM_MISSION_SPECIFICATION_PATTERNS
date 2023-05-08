@@ -1,0 +1,38 @@
+package patterns.core_movement_patterns.Surveillance
+
+
+import java.util.List
+import utils.Location
+import static xklaim.Navigation.RobotConstants.*
+import patterns.core_movement_patterns.Coverage.Visit
+
+/**
+	Keep visiting a set of locations, but not
+	in a particular order.
+ *
+ * @param robotId   the ID of the robot
+ * @param locations the list of locations to visit
+ * @param iterations the number of time the process should be executed
+ */
+proc Patrolling(String robotId,List<Location> locations, Integer iterations) {
+	var count=0
+	while(count<iterations){
+		
+		eval(new Visit(robotId, locations))@self
+		in(VISIT_COMPLETED)@self
+		count = count +1		
+	}
+	out(PATROLLING_COMPLETED)@self
+ }
+      
+      
+      
+      
+      		
+		
+	
+
+
+
+
+

@@ -1,0 +1,33 @@
+package patterns.core_movement_patterns.Surveillance
+
+
+import java.util.List
+import utils.Location
+import static xklaim.Navigation.RobotConstants.*
+import patterns.core_movement_patterns.Coverage.Strict_Ordered_Visit
+
+/**
+	Ordered patrolling pattern does not
+	avoid a predecessor location to be visited multiple times before its successor.
+	Strict Ordered Patrolling ensures that,
+	after a predecessor is visited, it is not
+	visited again before its successor.
+ *
+ * @param robotId   the ID of the robot
+ * @param locations the list of locations to visit
+ * @param iterations the number of time the process should be executed
+ */
+proc Strict_Ordered_Patrolling(String robotId,List<Location> locations, Integer iterations) {
+	var count=0
+	
+	while(count<iterations){
+		eval(new Strict_Ordered_Visit(robotId, locations))@self	
+		in(STRICT_ORDERED_VISIT_COMPLETED)@self
+		count = count +1		
+	}
+	out(STRICT_ORDERED_PATROLLING_COMPLETED)@self
+ }
+      
+      
+      		
+		

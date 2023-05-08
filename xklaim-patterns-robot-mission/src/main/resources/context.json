@@ -1,0 +1,200 @@
+{
+  "id": 1,
+  "name": "context-1",
+  "availableActions": [
+    {
+      "id": 9,
+      "name": "Before_Pick",
+      "description": "the first action to do",
+      "jointNames": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6"
+      ],
+      "jointPositions": [
+        -3.14,
+        -0.2169,
+        -0.5822,
+        3.14,
+        1.66,
+        -0.01412
+      ]
+    },
+    {
+      "id": 1,
+      "name": "GetDown",
+      "description": "pick position",
+      "jointNames": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6"
+      ],
+      "jointPositions": [
+        -3.1415,
+        -0.9975,
+        -0.497,
+        3.14,
+        1.6613,
+        -0.0142
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Grip",
+      "description": "closing the gripper",
+      "jointNames": [
+        "f_joint1",
+        "f_joint2"
+      ],
+      "jointPositions": [
+        0.019927757424255833,
+        -0.010904802339570573
+      ]
+    },
+    {
+      "id": 3,
+      "name": "GetUp",
+      "description": "After picking the object",
+      "jointNames": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6"
+      ],
+      "jointPositions": [
+        -3.1415,
+        -0.2862,
+        -0.5,
+        3.14,
+        1.6613,
+        -0.0142
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Rotate",
+      "description": "rotate",
+      "jointNames": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6"
+      ],
+      "jointPositions": [
+        -0.9546,
+        -0.2,
+        -0.7241,
+        3.14,
+        1.6613,
+        -0.0142
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Lay",
+      "description": "before posing",
+      "jointNames": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6"
+      ],
+      "jointPositions": [
+        -0.9546,
+        -0.0097,
+        -0.9513,
+        3.14,
+        1.7749,
+        -0.0142
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Release",
+      "description": "open the gripper",
+      "jointNames": [
+        "f_joint1",
+        "f_joint2"
+      ],
+      "jointPositions": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": 7,
+      "name": "GoToInitialPosition",
+      "description": "initial position",
+      "jointNames": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6"
+      ],
+      "jointPositions": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "availableLocations": [
+    {
+      "id": 1,
+      "name": "l1",
+      "description": "Destination of the object",
+      "locations": [
+        -9.00,
+        -9.00,
+        1
+      ]
+    },
+        {
+      "id": 2,
+      "name": "l2",
+      "description": "Destination of the object",
+      "locations": [
+        9.00,
+        9.00,
+        1
+      ]
+    },
+        {
+      "id": 3,
+      "name": "l3",
+      "description": "Destination of the object",
+      "locations": [
+        -9.00,
+        9.00,
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "name": "l4",
+      "description": "Destination of the kitchen",
+      "locations": [
+        9.00,
+        -9.00,
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+
+
+import utils.Location
+import messages.XklaimToRosConnection
+import ros.Publisher
+import messages.Twist
+
+net TestRobot physical "localhost:9999" {
+
+         
+     node Robot{
+
+			// connect to the ROS bridge
+		val bridge = new XklaimToRosConnection("ws://0.0.0.0:9090")
+	
+		// initialize a publisher for the topic related to the control of the robot's wheels
+		val pub = new Publisher("/cmd_vel", "geometry_msgs/Twist", bridge)
+	
+		// create the message for sending velocity commands
+		val vel_msg = new Twist()	  
+     	
+     	vel_msg.linear.x=0.1
+     	vel_msg.angular.z=0.0 
+     	
+     	pub.publish(vel_msg)
+     	
+     	}
+ }     
+         
+         
+
+     	
+     	
+     	
+       
+
+	
+

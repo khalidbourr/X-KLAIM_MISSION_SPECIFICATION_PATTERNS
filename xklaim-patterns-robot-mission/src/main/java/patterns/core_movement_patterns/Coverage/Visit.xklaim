@@ -1,0 +1,57 @@
+package patterns.core_movement_patterns.Coverage
+
+
+import utils.TraceGenerator
+import java.util.List
+import utils.Location
+import static xklaim.Navigation.RobotConstants.*
+import java.util.ArrayList
+import xklaim.Navigation.MoveTo
+
+/**
+ * Visit a set of locations in an unspecified order.
+ *
+ * @param robotId   the ID of the robot
+ * @param locations the list of locations to visit
+ */
+proc Visit(String robotId, List<Location> locations) {
+    // Get the number of locations
+    val n = locations.size()
+    
+    // Generate a random trace
+    val trace = TraceGenerator.createRandom(n)
+        
+    // Create a list to store the visited locations
+    val visitedLocations = new ArrayList<String>()
+    
+    // Visit the locations according to the trace
+    for (i : trace) {
+        // Get the location to visit
+        val location = locations.get(i)
+        
+        // Add the location to the visited locations list
+        visitedLocations.add(location.name)
+        
+        // Print a message indicating the location the robot is moving to
+        println("Moving to location: " + location.name)
+        
+        // Move to the location and wait for completion
+        eval(new MoveTo(robotId, location.x, location.y))@self
+        in(MOVE_TO_COMPLETED)@self
+    }
+    
+    out(VISIT_COMPLETED)@self
+    // Print the visited locations list
+    println("Visited locations: " + visitedLocations)
+}
+ 
+ 
+      
+      
+      		
+	
+
+
+
+
+

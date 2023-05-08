@@ -1,0 +1,37 @@
+package patterns.core_movement_patterns.Surveillance
+
+
+import java.util.List
+import utils.Location
+import static xklaim.Navigation.RobotConstants.*
+import patterns.core_movement_patterns.Coverage.Ordered_Visit
+
+/**
+	Sequence patrolling does not forbid to
+	visit a successor location before its predecessor. Ordered patrolling ensures that
+	(after a successor is visited) the successor is not visited (again) before its
+	predecessor.
+ *
+ * @param robotId   the ID of the robot
+ * @param locations the list of locations to visit
+ */
+proc Ordered_Patrolling(String robotId,List<Location> locations) {
+	
+	while(true){
+		
+		eval(new Ordered_Visit(robotId, locations))@self
+		in(ORDERED_VISIT_COMPLETED)@self		
+	}
+ }
+      
+      
+      
+      
+      		
+		
+	
+
+
+
+
+

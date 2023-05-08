@@ -1,0 +1,39 @@
+package patterns.core_movement_patterns.Surveillance
+
+import java.util.List
+import utils.Location
+import static xklaim.Navigation.RobotConstants.*
+import patterns.core_movement_patterns.Coverage.Fair_Visit
+
+/**
+	Keep visiting a set of locations and
+	ensure that the difference among the
+	number of times locations within a set
+	are visited is at most one.
+ *
+ * @param robotId   the ID of the robot
+ * @param locations the list of locations to visit
+ * @param iterations the number of time the process should be executed
+ */
+proc Fair_Patrolling(String robotId,List<Location> locations, Integer iterations) {
+	var count=0
+	while(count<iterations){
+		
+		eval(new Fair_Visit(robotId, locations))@self
+		in(FAIR_VISIT_COMPLETED)@self
+		count = count +1		
+	}
+	out(FAIR_PATROLLING_COMPLETED)@self
+ }
+      
+      
+      
+      
+      		
+		
+	
+
+
+
+
+
